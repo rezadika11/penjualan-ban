@@ -32,4 +32,11 @@ class DashboardUserController extends Controller
 
         return $response;
     }
+
+    public function detail_produk($id)
+    {
+        $produk = Produk::join('kategori', 'kategori.id_kategori', 'produk.id_kategori')
+            ->where('id_produk', $id)->first();
+        return view('frontend.produk.detail', compact('produk'));
+    }
 }

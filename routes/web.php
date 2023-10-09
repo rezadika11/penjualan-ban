@@ -34,6 +34,7 @@ use Illuminate\Support\Facades\Route;
 // })->middleware(['auth'])->name('dashboard');
 Route::get('/', [DashboardUserController::class, 'index'])->name('dashboarduser')->middleware('guest');
 Route::get('/user/storage/{filename}', [DashboardUserController::class, 'getImageUser'])->name('getImageUser')->middleware('guest');
+Route::get('/detail-produk/{id}', [DashboardUserController::class, 'detail_produk'])->name('detail_produk')->middleware('guest');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

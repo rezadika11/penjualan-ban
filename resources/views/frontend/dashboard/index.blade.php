@@ -88,12 +88,14 @@
                                         <h1 class="card-title fs-22">{{ $item->nama_produk }}</h1>
                                         <h5>Rp . {{ format_uang($item->harga_jual) }}</h5>
                                     </div>
-                                    {{-- <div class="card-footer">
+                                    <div class="card-footer">
                                         <div class="d-grid gap-2 d-md-block">
-                                            <button class="btn btn-primary">Tambah Keranjang</button>
-                                            <button class="btn btn-outline-warning">Detail</button>
+                                            <a href="https://api.whatsapp.com/send?phone=6282138583911&text=Hallo%20saya%20tertarik%20dengan%20produk%20ini%20{{ $item->nama_produk }}"
+                                                class="btn btn-primary">Beli</a>
+                                            <a href="{{ route('detail_produk', $item->id_produk) }}"
+                                                class="btn btn-outline-warning">Detail</a>
                                         </div>
-                                    </div> --}}
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
@@ -101,7 +103,7 @@
                     </div>
                 </div>
             </div>
-            <a href="https://api.whatsapp.com/send?phone=6282138583911&text=Hallo%20saya%20tertarik%20dengan%20produk%20anda"
+            <a href="https://api.whatsapp.com/send?phone=6282138583911&text=Hallo%20saya%20tertarik%20dengan%20produk%20ini"
                 class="float" target="_blank">
                 <i class="fa fa-whatsapp my-float"></i>
             </a>
