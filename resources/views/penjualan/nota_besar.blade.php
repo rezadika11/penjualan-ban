@@ -38,11 +38,10 @@
         <tr>
             <td rowspan="4" width="60%">
                 {{-- <img src="{{ public_path($setting->path_logo) }}" alt="{{ $setting->path_logo }}" width="120"> --}}
-                <p>{{ $setting->nama_perusahaan }}</p>
+                {{ $setting->nama_perusahaan }}
                 <br>
                 {{ $setting->alamat }}
-                <br>
-                <br>
+                <p>No Nota: {{ tambah_nol_didepan($penjualan->id_nota, 4) }}</p>
             </td>
             <td>Tanggal</td>
             <td>: {{ tanggal_indonesia(date('Y-m-d')) }}</td>

@@ -32,6 +32,7 @@ class PenjualanController extends Controller
      */
     public function create()
     {
+        $jual = Penjualan::count();
         $penjualan = new Penjualan();
         $penjualan->total_item = 0;
         $penjualan->total_harga = 0;
@@ -39,6 +40,7 @@ class PenjualanController extends Controller
         $penjualan->bayar = 0;
         $penjualan->diterima = 0;
         $penjualan->id_user = auth()->id();
+        $penjualan->id_nota = $jual + 1;
         $penjualan->save();
 
 

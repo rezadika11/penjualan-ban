@@ -14,13 +14,18 @@ class BuatPenjualanTable extends Migration
     public function up()
     {
         Schema::create('penjualan', function (Blueprint $table) {
-            $table->increments('id_penjualan');
+            $table->increments('id_penjualan'); // Auto-incrementing primary key column
+
             $table->integer('total_item');
             $table->integer('total_harga');
             $table->tinyInteger('diskon')->default(0);
             $table->integer('bayar')->default(0);
             $table->integer('diterima')->default(0);
+
+            // Auto-incrementing but not primary keys
             $table->integer('id_user');
+            $table->unsignedInteger('id_nota')->unsigned();
+
             $table->timestamps();
         });
     }
